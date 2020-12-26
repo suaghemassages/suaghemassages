@@ -1,0 +1,50 @@
+
+<div class="ghemassages-all">
+  <h2>Tổng số sản phẩm <%=response.count%></h2>
+  <a href="/posts/posts-create">Thêm</a>
+<table class="table table-bordered table-admin">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Title Seo</th>
+      <th>Mô tả ngắn</th>
+
+      <th>Ngày đăng</th>
+      <th>og-title</th>
+
+      <th>Từ khóa</th>
+      <th>Post tiêu điểm</th>
+      <th>Post nổi bật mới nhất</th>
+      <th>Dịch vụ</th>
+      <th>Hình ảnh</th>
+      <th>Thứ tự</th>
+      <th>Sửa</th>
+      <th>Xóa</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for(var i=0;i<response.count;i++){ %>
+      <tr>
+      <td> <%-response.posts[i].title %> </td>
+      <td> <%-response.posts[i].titleseo %> </td>
+      <td> <%-response.posts[i].shortdescription %> </td>
+
+      <td> <%=response.posts[i].day %> </td>
+      <td> <%=response.posts[i].ogtitle %> </td>
+
+      <td><%=response.posts[i].keywords %>  </td>
+      <td><%=response.posts[i].hotposts %>  </td>
+      <td><%=response.posts[i].lastposts %>  </td>
+      <td><%=response.posts[i].service %>  </td>
+      <td class="image-response"><img src="/<%=response.posts[i].image %>">  </td>
+      <td><%=response.posts[i].index %>  </td>
+      <td><a href="/posts/edit/<%=response.posts[i]._id %>">Sửa</a></td>
+      <td><a class="delete-posts" data-id="<%=response.posts[i]._id %>">Xóa</a></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+</div>
+</div>

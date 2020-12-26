@@ -1,0 +1,38 @@
+
+
+  <h2>Danh sách thương hiệu</h2>
+    <h2>Tổng số thương hiệu <%=response.count%></h2>
+    <a href="/trademark/trademark-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên thương hiệu</th>
+        <th>Ngành hàng</th>
+        <th>Index</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.ghemassages[i].name %> </td>
+        <td> <%=response.ghemassages[i].nganhhang %> </td>
+        <td> <%=response.ghemassages[i].index %> </td>
+        <td><a href="/trademark/edit/<%=response.ghemassages[i]._id %>">Sửa</a></td>
+        <td><a class="delete-trademark" data-id="<%=response.ghemassages[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

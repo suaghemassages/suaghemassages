@@ -1,0 +1,34 @@
+
+<%if(products){%>
+  <div class="shopping-cart-mb">
+    <div class="bar-top">
+      <a href="/" class="buymore">Mua thêm sản phẩm khác</a>
+      <div class="yourcart">Giỏ hàng của bạn</div>
+    </div>
+    <div class="detail-cart">
+      <ul class="list-group">
+          <% for(var i=0; i<products.length ;i++){ %>
+              <li class="list-group-item">
+
+                <span class="name-order mb">  <strong><%=products[i].item.name   %></strong></span>
+                  <span class="label label-success label-normal commas"><%=products[i].price%> ₫</span>
+                  <a href="/cart/add/<%=products[i].item._id%>" class="label label-primary label-normal">+</a>
+                  <a href="/cart/reduce/<%=products[i].item._id%>" class="label label-primary label-normal">-</a>
+                  <a href="/cart/remove/<%=products[i].item._id%>" class="label label-danger label-normal">Xóa</a>
+                  <span class="badge"><%=products[i].qty%></span>
+              </li>
+          <%}%>
+      </ul>
+
+      <div >
+          <strong>Tổng đơn hàng: <span class="commas total-order"><%=totalPrice%> ₫</span></strong>
+      </div>
+    </div>
+      <hr>
+      <a href="/cart/checkout" type="button" class="btn btn-success">Thanh toán</a>
+  </div>
+<% } else {%>
+  <div class="shopping-cart-mb">
+      <h2>Không có sản phẩm nào trong giỏ hàng của bạn</h2>
+  </div>
+<% } %>

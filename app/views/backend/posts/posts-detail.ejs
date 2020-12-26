@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+
+        <li> <%=post.title%> </li>
+        <li> <%=post.titleseo%> </li>
+        <li> <%=post.shortdescription%> </li>
+        <li> <%=post.description%> </li>
+        <li><img src="/<%=post.image%>" >  </li>
+        <li> <%=post.day%> </li>
+        <li><%=post.ogtitle%></li>
+        <li><%=post.ogdescription%></li>
+        <li><%=post.keywords%></li>
+        <li><%=post.hotnews%></li>
+        <li><%=post.lastnews%></li>
+        <li><%=post.service%></li>
+        <li><%=post.index%></li>
+    </ul>
+    <a href="/news/edit/<%=post._id%>"><button id="sua">Edit</button></a>
+
+  </body>
+</html>

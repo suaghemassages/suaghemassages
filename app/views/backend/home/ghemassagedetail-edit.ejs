@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/ghemassage/edit/<%=ghemassage._id%>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Tên ghế</label>
+        <input type="text" name="name" placeholder="Nhập tên ghế massage" value="<%=ghemassage.name%>"  class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tên ghế seo</label>
+        <input type="text" name="nameseo" placeholder="Nhập tên seo" value="<%=ghemassage.nameseo%>" class="form-control">
+      </div>
+
+      <%if(ghemassage.status){%>
+        <div class="form-group">
+          <label>Tình trạng mới/cũ</label>
+          <input type="checkbox" name="status" checked >
+        </div>
+
+      <%} else{%>
+        <div class="form-group">
+          <label>Tình trạng mới/cũ</label>
+          <input type="checkbox" name="status" >
+        </div>
+      <%}%>
+      <div class="form-group">
+        <label>Ngành hàng</label>
+        <input type="text" name="nganhhang" placeholder="Nhập ngành hàng" value="<%=ghemassage.nganhhang%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Thương hiệu</label>
+        <input type="text" name="trademark" placeholder="Nhập thương hiệu" value="<%=ghemassage.trademark%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Giá gốc</label>
+        <input type="text" name="price" placeholder="Nhập Giá" value="<%=ghemassage.price%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Giá Flashsale</label>
+        <input type="text" name="pricesale" placeholder="Nhập Giá" value="<%=ghemassage.pricesale%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Ảnh đại diện</label>
+        <input type="file" name="imagedefault" placeholder="Import Hình Ảnh" class="form-control"  multiple >
+      </div>
+      <div class="form-group">
+        <label>Bộ sưu tập ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple >
+      </div>
+      <div class="form-group">
+        <label>Thời gian bảo hành</label>
+        <input type="text" name="baohanh" placeholder="Nhập thời gian bảo hành" value="<%=ghemassage.baohanh%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tiêu đề</label>
+        <input type="text" name="title" placeholder="Nhập Title" class="form-control" value="<%-ghemassage.title%>" >
+      </div>
+      <div class="form-group">
+        <label>Og title</label>
+        <input type="text" name="ogtitle" placeholder="Nhập ogtitle" class="form-control"  value="<%=ghemassage.ogtitle%>" >
+      </div>
+      <div class="form-group">
+        <label>Mô tả dài</label>
+        <textarea id="shortdescription" name="description" placeholder="Nhập Mô tả" ><%=ghemassage.description%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Og Mô tả</label>
+        <input type="text" name="ogdescription" placeholder="Nhập ogdescription" value="<%=ghemassage.ogdescription%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Từ khóa</label>
+        <input type="text" name="keywords" placeholder="Nhập từ khóa" value="<%=ghemassage.keywords%>" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Thứ tự</label>
+        <input type="number" name="index" placeholder="Nhập thứ tự" value="<%=ghemassage.index%>" class="form-control">
+      </div>
+
+      <%if(ghemassage.flashsale){%>
+        <div class="form-group">
+          <label>Là Flashsale</label>
+          <input type="checkbox" name="flashsale" checked >
+        </div>
+
+      <%} else{%>
+        <div class="form-group">
+          <label>Là Flashsale</label>
+          <input type="checkbox" name="flashsale">
+        </div>
+      <%}%>
+        <%if(ghemassage.bestsell){%>
+        <div class="form-group">
+          <label>Bán chạy nhất</label>
+          <input type="checkbox" name="bestsell" checked>
+        </div>
+        <%} else{%>
+          <div class="form-group">
+            <label>Bán chạy nhất</label>
+            <input type="checkbox" name="bestsell">
+          </div>
+        <%}%>
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

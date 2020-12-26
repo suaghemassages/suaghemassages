@@ -1,0 +1,36 @@
+
+
+  <h2>Danh sách sản phẩm</h2>
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên ghế</th>
+        <th>Số lượng</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+        <th>Thêm</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.orders[i].ghemassage.name %> </td>
+        <td> <%=response.orders[i].quantity %> </td>
+        <td><a href="/orders/edit/<%=response.orders[i]._id %>">Sửa</a></td>
+        <td><a class="delete-order" data-id="<%=response.orders[i]._id %>">Xóa</a></td>
+        <td><a href="order-create">Thêm</a></td>
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

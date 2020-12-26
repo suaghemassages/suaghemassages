@@ -1,0 +1,14 @@
+      <aside class="slideshow">
+        <div id="sync1" class="owl-carousel">
+          <%for(var i=0; i<slidehome.count;i++){%>
+            <div class="item">
+              <img src="/assest/image/<%=slidehome.slides[i].image%>">
+            </div>
+          <%}%>
+        </div>
+        <div id="sync2" class="owl-carousel ">
+          <%for(var i=0; i<slidehome.count;i++){%>
+            <div class="item"><h3><%=slidehome.slides[i].title%></h3></div>
+          <%}%>
+        </div>
+      </aside>

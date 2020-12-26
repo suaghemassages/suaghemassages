@@ -1,0 +1,66 @@
+
+<div class="ghemassages-all">
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="/ghemassage/ghemassage-create">Thêm sản phẩm <i class="fa fa-plus"></i></a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Tên ghế</th>
+        <th>Tên Seo</th>
+        <th>Tình trạng</th>
+        <th>Ngành hàng</th>
+        <th>Thương hiệu</th>
+        <th>Giá gốc</th>
+        <th>Giá flashsale</th>
+        <th>Hình ảnh Default</th>
+        <th>Hình ảnh thumb</th>
+        <th>Bảo hành</th>
+        <th>Tiêu đề</th>
+
+        <th>og Tiêu đề</th>
+
+        <th>Từ khóa</th>
+        <th>Thứ tự</th>
+        <th>Là Flash Sale</th>
+        <th>Là Best Sell</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.ghemassages[i].name %> </td>
+        <td> <%=response.ghemassages[i].nameseo %> </td>
+        <td> <%=response.ghemassages[i].status %> </td>
+        <td> <%=response.ghemassages[i].nganhhang %> </td>
+        <td> <%=response.ghemassages[i].trademark %> </td>
+        <td> <%=response.ghemassages[i].price %> </td>
+        <td> <%=response.ghemassages[i].pricesale %> </td>
+        <td class="image-response">
+          <%for(var n=0;n<response.ghemassages[i].imagedefault.length;n++){%>
+          <img src="/<%=response.ghemassages[i].imagedefault[n].originalname%>" />
+          <%}%>
+        </td>
+        <td class="image-response">
+          <%for(var k=0;k<response.ghemassages[i].image.length;k++){%>
+          <img src="/<%=response.ghemassages[i].image[k].originalname%>" />
+          <%}%>
+        </td>
+        <td> <%=response.ghemassages[i].baohanh %> </td>
+        <td><%-response.ghemassages[i].title %>  </td>
+
+        <td><%-response.ghemassages[i].ogtitle %>  </td>
+
+        <td><%-response.ghemassages[i].keywords %>  </td>
+        <td><%-response.ghemassages[i].index %>  </td>
+        <td><%-response.ghemassages[i].flashsale %>  </td>
+        <td><%-response.ghemassages[i].bestsell %>  </td>
+        <td><a href="/ghemassage/edit/<%=response.ghemassages[i]._id %>">Sửa</a></td>
+        <td><a class="delete-ghemassage" data-id="<%=response.ghemassages[i]._id %>">Xóa</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+</div>

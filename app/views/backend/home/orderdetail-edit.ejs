@@ -1,0 +1,15 @@
+
+
+    <form method="post" action="/orders/edit/<%=order._id%>" enctype="application/x-www-form-urlencoded">
+      <select name="ghemassageId" >Chọn tên loại ghế
+
+
+          <option value="<%=order.ghemassage._id%>"><%=order.ghemassage.name%></option>
+
+
+      </select>
+      <input type="text" name="quantity" placeholder="Nhập số lượng" value='<%=order.quantity%>' >
+
+
+      <input type="submit" value ="Cập nhật">
+    </form>

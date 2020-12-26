@@ -1,0 +1,62 @@
+
+<section>
+    <div class="breadcrumb-mb">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+              <li class="breadcrumb-item service"><a href="/tin-tuc"><i class="fa fa-newspaper-o"></i> Tin tức</a></li>
+                <li class="breadcrumb-item mb" active aria-current="page"> <%=newsdetail.new[0].title%></li>
+          </ol>
+      </nav>
+    </div>
+    <div class="wrap-newsdetail">
+      <h1 class="title-newsdetail"><%=newsdetail.new[0].title%></h1>
+      <div class="info-news-detail">
+        <span class="category-news"><%=newsdetail.new[0].category%></span>
+        <span class="post-date"><i class="fa fa-clock-o"></i> <%=newsdetail.new[0].day%></span>
+        <span class="count-view"><i class="fa fa-eye"></i> Số lượt xem: <%=newsdetail.new[0].view%></span>
+      </div>
+      <div class="content-newsdetail">
+        <%-newsdetail.new[0].description%>
+      </div>
+    </div>
+    <aside>
+      <div class="suggest">
+          <figure class="template news">
+                    <figcaption>Tin liên quan</figcaption>
+                    <b></b>
+          </figure>
+          <div class="view-content">
+              <ul class="list-padding" style="">
+                <%for(var i=0;i<tinlienquan.count;i++){%>
+                  <li class="">
+                    <h5>
+                      <a href="/tin-tuc/<%-tinlienquan.new[i].titleseo%>"><%=tinlienquan.new[i].title%></a>
+                    </h5>
+                  </li>
+                <%}%>
+              </ul>
+          </div>
+      </div>
+    </aside>
+    <div class="aside-right-newsdetail-mb">
+      <div class="suggest  marTop10">
+          <figure class="template news letter">
+                    <figcaption>Nhận bản tin</figcaption>
+                    <b></b>
+          </figure>
+      </div>
+      <div class="form-news-letter">
+        <form action='/nhanbantin/ban-tin-news' method="post">
+          <div class="mc-field-group">
+            <input type="text" value="" name="email" placeholder="nhận bản tin qua email" >
+          </div>
+          <div class="clear">
+            <input type="submit" value="Subscribe" name="subscribe" class="btn-news-letter" >
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+</section>

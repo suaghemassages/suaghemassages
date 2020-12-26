@@ -1,0 +1,34 @@
+<div class="checkoutinfo">
+  <div id="success" class="alert alert-success text-center" <%if(noMessages){%> hidden<% } %>>
+      <%=successMsg%>
+  </div>
+  <div class="thank mb">Cảm ơn bạn đã cho chúng tôi cơ hội được phục vụ. Trong vòng 5 phút, nhân viên của chúng tôi sẽ gọi điện xác nhận đơn hàng của bạn</div>
+  <div class="titlebill">Thông tin đặt hàng:</div>
+  <div class="wrap-total-order">Tổng tiền: <b class="total-order commas"><%=order.cart.totalPrice%> &#8363;</b></div>
+  <ul class="list-group">
+      <li class="list-group-item mb">
+          <span class="order-info mb">Họ tên:</span><span><b><%=order.name%></b></span>
+      </li>
+      <li class="list-group-item mb">
+          <span class="order-info mb">Số điện thoại:</span><b><span><%=order.phone%></b></span>
+      </li>
+      <li class="list-group-item mb">
+        <span class="order-info mb">Địa chỉ giao hàng:</span> <span><b><%=order.address%></b></span>
+      </li>
+      <li class="list-group-item mb">
+          <span class="order-info mb">Ghi chú thêm:</span><span><%=order.note%></span>
+      </li>
+  </ul>
+  <ul class="list-group">
+      <%for(var i=0; i<cart.length;i++){%>
+          <li class="list-group-item mb">
+
+                <span>Tên sản phẩm: </span> <b><%=cart[i].item.name%></b>
+                 <p><span>Số lượng:</span> <b><%=cart[i].qty%></b></p>
+          </li>
+      <%}%>
+  </ul>
+  <div class="help-call">
+    Khi cần hỗ trợ vui lòng gọi <b>09.89.89.0248</b> (7h30 - 22h30)
+  </div>
+</div>

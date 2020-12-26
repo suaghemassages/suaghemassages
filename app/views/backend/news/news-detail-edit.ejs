@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/news/edit/<%=ghemassage._id%>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Tiêu đề</label>
+        <input type="text" name="title" placeholder="Nhập title" class="form-control" value="<%=ghemassage.title%>">
+      </div>
+      <div class="form-group">
+        <label>Tiêu đề seo</label>
+        <input type="text" name="titleseo" placeholder="Nhập title seo" class="form-control" value="<%=ghemassage.titleseo%>">
+      </div>
+      <div class="form-group">
+        <label>Mô tả ngắn</label>
+        <textarea id="shortdescription" name="shortdescription" placeholder="Nhập mô tả ngắn" class="form-control" ><%=ghemassage.shortdescription%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Mô tả dài</label>
+        <textarea id="description" name="description" placeholder="Nhập mô tả " class="form-control"><%=ghemassage.description%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Thời gian đăng bài</label>
+        <input type="datetime-local" name="day" placeholder="Nhập Ngày đăng bài" class="form-control" value="<%=ghemassage.day%>">
+      </div>
+      <div class="form-group">
+        <label>og tiêu đề</label>
+        <input type="text" name="ogtitle" placeholder="Nhập og-title" class="form-control" value="<%=ghemassage.ogtitle%>">
+      </div>
+      <div class="form-group">
+        <label>og mô tả</label>
+        <input type="text" name="ogdescription" placeholder="Nhập og-description" class="form-control" value="<%=ghemassage.ogdescription%>">
+      </div>
+      <div class="form-group">
+        <label>Từ khóa</label>
+        <input type="text" name="keywords" placeholder="Nhập từ khóa" class="form-control" value="<%=ghemassage.keywords%>">
+      </div>
+
+      <%if(ghemassage.hotnews){%>
+        <div class="form-group">
+          <label>Tin tiêu điểm duy nhất</label>
+          <input type="checkbox" name="hotnews" checked>
+        </div>
+      <%} else{%>
+        <div class="form-group">
+          <label>Tin tiêu điểm duy nhất</label>
+          <input type="checkbox" name="hotnews" >
+        </div>
+      <%}%>
+      <%if(ghemassage.lastnews){%>
+        <div class="form-group">
+          <label>Tin mới nhất</label>
+          <input type="checkbox" name="lastnews" checked>
+        </div>
+      <%} else{%>
+        <div class="form-group">
+          <label>Tin mới nhất</label>
+          <input type="checkbox" name="lastnews">
+        </div>
+      <%}%>
+      <%if(ghemassage.slidenews){%>
+        <div class="form-group">
+          <label>Tin slidenews</label>
+          <input type="checkbox" name="slidenews" checked>
+        </div>
+      <%} else{%>
+        <div class="form-group">
+          <label>Tin slidenews</label>
+          <input type="checkbox" name="slidenews">
+        </div>
+      <%}%>
+      <div class="form-group">
+        <label>Chủ đề</label>
+        <input type="text" name="category" placeholder="Nhập chủ đề cần đăng" class="form-control" value="<%=ghemassage.category%>">
+      </div>
+      <div class="form-group">
+        <label>Hình ảnh</label>
+          <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control" value="<%=ghemassage.image%>">
+      </div>
+      <div class="form-group">
+        <label>Thứ tự</label>
+          <input type="number" name="index" placeholder="Nhập thứ tự" class="form-control" value="<%=ghemassage.index%>">
+      </div>
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

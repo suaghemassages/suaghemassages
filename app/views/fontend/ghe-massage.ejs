@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <div id="success" class="alert alert-success" <%if(noMessages){%> hidden<% } %>>
+            <%=successMsg%>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-admin">
+  <thead>
+    <tr>
+      <th>Tên ghế</th>
+      <th>Giá</th>
+      <th>Hình ảnh</th>
+      <th>Bảo hành</th>
+      <th>Tiêu đề</th>
+      <th>Mô tả sản phẩm</th>
+      <th>Sửa</th>
+      <th>Xóa</th>
+      <th>add to cart</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for(var i=0;i<response.count;i++){ %>
+      <tr>
+      <td> <%=response.ghemassages[i].name %> </td>
+      <td> <%=response.ghemassages[i].price %> </td>
+      <td class="image-response"><img src=/<%=response.ghemassages[i].image %> >  </td>
+      <td> <%=response.ghemassages[i].baohanh %> </td>
+      <td><%-response.ghemassages[i].title %>  </td>
+      <td><%-response.ghemassages[i].description %>  </td>
+      <td><a href="/ghemassage/edit/<%=response.ghemassages[i]._id %>">Sửa</a></td>
+      <td><a class="delete-ghemassage" data-id="<%=response.ghemassages[i]._id %>">Xóa</a></td>
+      <td><a href="/cart/add-to-cart/<%=response.ghemassages[i]._id %>" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a></td>
+      </tr>
+    <% } %>
+
+
+  </tbody>
+</table>

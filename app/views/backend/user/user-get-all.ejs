@@ -1,0 +1,31 @@
+
+
+  <h2>Danh sách sản phẩm</h2>
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="user-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+        <th>Thêm</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.users[i].username %> </td>
+        <td> <%-response.users[i].password %>  </td>
+
+        <td><a href="/user/edit/<%=response.users[i]._id %>">Sửa</a></td>
+        <td><a class="delete-user" data-id="<%=response.users[i]._id %>">Xóa</a></td>
+        <td><a href="user-create">Thêm</a></td>
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>

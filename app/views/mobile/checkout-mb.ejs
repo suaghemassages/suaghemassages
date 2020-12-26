@@ -1,0 +1,49 @@
+
+
+<div class="checkout-mb">
+  <div class="bar-top">
+    <a href="/" class="buymore">Mua thêm sản phẩm khác</a>
+  </div>
+  <h1 class="title-order">Thông tin đơn hàng</h1>
+  <h4 >Tổng tiền đơn hàng: <span class="total-order-checkout commas"><%=total%> &#8363;</span></h4>
+  <div id="charge-error" class="alert alert-danger <%if(noError){%> hidden <% } %>">
+      <%=errMsg%>
+  </div>
+  <form action="/cart/checkout" method="post" id="checkout-form">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="name">Họ tên</label>
+                  <input type="text" id="name" class="form-control" required name="name" placeholder="nhập tên của bạn">
+              </div>
+          </div>
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="phone">Số điện thoại</label>
+                  <input type="text" id="phone" class="form-control" required name="phone" placeholder="nhập số điện thoại của bạn">
+              </div>
+          </div>
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="phone">Địa chỉ Email</label>
+                  <input type="text" id="email" class="form-control"  name="email" placeholder="nhập email để nhận thông tin đơn hàng">
+              </div>
+          </div>
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="address">Địa chỉ giao hàng</label>
+                  <input type="text" id="address" class="form-control" required name="address" placeholder="nhập địa chỉ nhận hàng của bạn">
+              </div>
+          </div>
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="note">Ghi chú thêm</label>
+                  <textarea id="note" class="form-control"  name="note" value="Ghi chú thêm"></textarea>
+              </div>
+          </div>
+          <hr>
+
+      </div>
+      <button type="submit" class="btn btn-success">Thanh toán</button>
+  </form>
+</div>

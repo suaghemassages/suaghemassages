@@ -1,0 +1,52 @@
+
+<div class="ghemassages-all">
+    <h2>Tổng số tin tức <%=response.count%></h2>
+    <a href="news-create">Thêm tin tức<i class="fa fa-plus"></i></a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Title Seo</th>
+        <th>Mô tả ngắn</th>
+
+        <th>Ngày đăng</th>
+        <th>og-title</th>
+
+        <th>Từ khóa</th>
+        <th>Tin tiêu điểm</th>
+        <th>Tin nổi bật mới nhất</th>
+        <th>Là Slide News</th>
+        <th>Chủ đề</th>
+        <th>Hình ảnh</th>
+        <th>Thứ tự</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.news[i].title %> </td>
+        <td> <%=response.news[i].titleseo %> </td>
+        <td> <%=response.news[i].shortdescription %> </td>
+
+        <td> <%=response.news[i].day %> </td>
+        <td> <%=response.news[i].ogtitle %> </td>
+
+        <td><%-response.news[i].keywords %>  </td>
+        <td><%-response.news[i].hotnews %>  </td>
+        <td><%-response.news[i].lastnews %>  </td>
+        <td><%-response.news[i].slidenews %>  </td>
+        <td><%-response.news[i].category %>  </td>
+        <td class="image-response"><img src="/<%=response.news[i].image %> ">  </td>
+        <td><%-response.news[i].index %>  </td>
+        <td><a href="/news/edit/<%=response.news[i]._id %>">Sửa</a></td>
+        <td><a class="delete-news" data-id="<%=response.news[i]._id %>">Xóa</a></td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+</div>

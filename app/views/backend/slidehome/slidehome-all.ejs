@@ -1,0 +1,40 @@
+
+
+  <h2>Danh sách sản phẩm</h2>
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="/slidehome/slidehome-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Hình ảnh</th>
+        <th>Title</th>
+        <th>Index</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+
+        <td class="image-response"><img src="/<%=response.ghemassages[i].image %>" >  </td>
+        <td><%-response.ghemassages[i].title %>  </td>
+        <td><%-response.ghemassages[i].index %>  </td>
+        <td><a href="/slidehome/edit/<%=response.ghemassages[i].slidehomeId %>">Sửa</a></td>
+        <td><a class="delete-slidehome" data-id="<%=response.ghemassages[i].slidehomeId %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

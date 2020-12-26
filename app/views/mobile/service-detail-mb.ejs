@@ -1,0 +1,54 @@
+<div class="service-detail-mb">
+  <section>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item mb" active aria-current="page"> <%=postsdetail.post[0].title%></li>
+        </ol>
+    </nav>
+    <div class="service-outstanding">
+      <div class="service-item">
+        <figure>
+          <img src="/dich-vu-sua-chua-24h-bao-hanh-12-thang-bao-tri-tron-doi.jpg" class="round mb" alt="Dịch vụ sửa chữa 24h, bảo hành dài hạn 12 tháng, bảo trì trọn đời">
+        </figure>
+      </div>
+      <div class="service-item">
+        <figure>
+          <img src="/mua-ban-san-pham-da-qua-su-dung.jpg" class="round mb" alt="Mua bán sản phẩm đã qua sử dụng">
+        </figure>
+      </div>
+      <div class="service-item">
+        <figure>
+          <img src="/giao-hang-mien-phi-cac-tinh-noi-thanh.jpg" class="round mb" alt="giao hàng miễn phí các tỉnh nội thành">
+        </figure>
+      </div>
+    </div>
+    <div class="service-content">
+        <h1 class="title-service mb"> <%-postsdetail.post[0].title%></h1>
+        <div class="body-service-content mb">
+           <%-postsdetail.post[0].description%>
+        </div>
+    </div>
+    <div class="aside-right-postdetail mb">
+      <aside>
+        <div class="suggest">
+            <figure class="template post">
+                      <figcaption>Các dịch vụ khác</figcaption>
+                      <b></b>
+            </figure>
+            <div class="view-content post">
+                <ul class="list-padding" style="">
+                  <%for(var i=0;i<postsfilter.count;i++){%>
+                    <li class="">
+                      <h5>
+                        <a href="/<%=postsfilter.post[i].titleseo%>"><i class="fa fa-angle-right"></i> <%=postsfilter.post[i].title%></a>
+                      </h5>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>

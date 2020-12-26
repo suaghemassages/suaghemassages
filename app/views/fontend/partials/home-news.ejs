@@ -1,0 +1,27 @@
+<aside class="homenews">
+  <figure>
+      <h2>
+        <a href="/tin-tuc">Tin tức hot</a>
+      </h2>
+      <a href="/tin-tuc/<%=hotnews.news[0].titleseo%>" class="liveevent" target="_blank">
+          <span id="dot">
+              <span class="ping"></span>
+          </span>
+          <span class="text">
+              <%=hotnews.news[0].title%>
+          </span>
+      </a>
+  </figure>
+  <ul class="list-news">
+      <%for(let i=0;i<lastnewshome.count;i++){%>
+        <li class="item-news">
+          <a href="/tin-tuc/<%=lastnewshome.news[i].titleseo%>">
+              <img src="/<%=lastnewshome.news[i].image%>" alt="<%=lastnewshome.news[i].image%>"/>
+              <h3><%=lastnewshome.news[i].title%>
+              </h3>
+          </a>
+      </li>
+      <%}%>
+  </ul>
+
+</aside>

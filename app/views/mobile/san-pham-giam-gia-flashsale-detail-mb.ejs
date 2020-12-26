@@ -1,0 +1,98 @@
+
+<section>
+  <div class="breadcrumb-mb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+            <li class="breadcrumb-item service"><a href="/san-pham-giam-gia-flash-sale"> Sản phẩm giảm giá Flash Sale</a></li>
+              <li class="breadcrumb-item mb" active aria-current="page"> <%=ghemassagedetail.ghemassages[0].name%></li>
+        </ol>
+    </nav>
+  </div>
+  <div class="wrap-img-product-detail">
+      <div class="img-product-detail">
+          <img id="zoom_easing"
+          src="/<%=ghemassagedetail.ghemassages[0].imagedefault[0].originalname%>"
+          data-zoom-image="/<%=ghemassagedetail.ghemassages[0].imagedefault[0].originalname%>"/>
+      </div>
+      <div class="thumb-img-product-detail">
+        <div id="lightgallery">
+            <%for(var k=0;k<ghemassagedetail.ghemassages[0].image.length;k++){%>
+            <a href="/<%=ghemassagedetail.ghemassages[0].image[k].originalname%>">
+                <img src="/<%=ghemassagedetail.ghemassages[0].image[k].originalname%>"/>
+            </a>
+            <%}%>
+
+        </div>
+      </div>
+  </div>
+  <div class="product-detail-info">
+        <h1><%=ghemassagedetail.ghemassages[0].name%> </h1>
+        <div class="product-detail-info-inner">
+              <div class="product-note-delivery"><i class="fa fa-truck"></i> Giao hàng và thu tiền tại nhà trên toàn quốc</div>
+              <div class="product-price product-price-old">
+                  <span class="product-price-label">Giá cũ:</span>
+                  <span class="product-price-val"><span class="commas"> <%=ghemassagedetail.ghemassages[0].price%></span> ₫</span>
+              </div>
+              <div class="product-price">
+                  <span class="product-price-label">Giá mới:</span>
+                  <span  class="product-price-val"><span class="commas"><%=ghemassagedetail.ghemassages[0].pricesale%></span> ₫</span>
+              </div>
+              <div class="warranty">
+                  <span class="warranty-label">Bảo hành:</span>
+                  <span class="warranty-val">	<%=ghemassagedetail.ghemassages[0].baohanh%></span>
+              </div>
+              <div class="product-buy-btn">
+
+                <a href="/cart/add-to-cart/<%=ghemassagedetail.ghemassages[0]._id %>"><i></i>
+                  Mua ngay</a>
+              </div>
+        </div>
+  </div>
+  <div class="warning">
+    <h5>Bảo vệ quyền lợi khách hàng mua được sản phẩm chính hãng, quý khách vui lòng:</h5>
+    <ul>
+        <li><i class="fa fa-phone"></i> <strong><a href="tel:19007118" class="phone">09.89.89.0248</a></strong> để được tư vấn miễn phí</li>
+        <li>Truy cập website: <a href="/" target="_blank">www.ghemassageservice.com</a></li>
+    </ul>
+  </div>
+  <div class="product-detail-delivery">
+    <div class="detail-delivery-item">
+      <ul>
+          <li>
+            <img src="/assest/image/ico-pro-deli.png" alt="Cam kết giao hàng nhanh trong vòng 24h đối với các quận nội thành HCM" title="Cam kết giao hàng nhanh trong vòng 24h đối với các quận nội thành">
+            <span>Giao hàng </span>
+            <span>trong 24H</span>
+          </li>
+          <li>
+            <img src="/assest/image/ico-pro-change.png" alt="Hoàn tiền 100% nếu có lỗi từ nhà sản xuất" title="Hoàn tiền 100% nếu có lỗi từ nhà sản xuất">
+            <span>Hoàn tiền </span>
+            <span>100% đảm bảo</span>
+          </li>
+          <li>
+            <img src="/assest/image/ico-pro-refund.png" alt="Hoàng Long đảm bảo đổi hàng trong 15 ngày" title="Hoàng Long đảm bảo đổi hàng trong 15 ngày">
+            <span>1 đổi 1</span>
+            <span>trong 15 ngày</span>
+          </li>
+      </ul>
+    </div>
+  </div>
+  <div class="detail-delivery-support">
+      <h4 class="delivery-title">Tổng đài tư vấn</h4>
+      <h5 class="delivery-title">09.89.89.0248</h5>
+  </div>
+  <div class="video-product-detail">
+        <iframe width="100%" height="170" src="https://www.youtube.com/embed/XaR15-xseR0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="main-content">
+      <figure class="template">
+          <figcaption>Thông tin sản phẩm</figcaption>
+          <b></b>
+      </figure>
+      <div class="content-detail">
+        <%-ghemassagedetail.ghemassages[0].description%>
+      </div>
+  </div>
+</div>
+<%- include('../fontend/partials/san-pham-dong-muc-gia') %>
+</section>

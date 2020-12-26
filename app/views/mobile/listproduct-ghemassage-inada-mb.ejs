@@ -1,0 +1,48 @@
+
+<section class="mb">
+  <div class="breadcrumb-mb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+              <li class="breadcrumb-item mb" active aria-current="page">  <%=ghemassagelist.count%> ghế massage Inada</li>
+        </ol>
+    </nav>
+  </div>
+
+  <div class="header-main">
+    <h1> Ghế massage Inada bán chạy nhất
+    </h1>
+  </div>
+  </div>
+  <ul class="list-product">
+    <%for(var i=0;i<ghemassagelist.count;i++){%>
+      <li class="item-product mb">
+          <div class="img-product">
+              <img src="/<%=ghemassagelist.ghemassages[i].imagedefault[0].originalname%>" alt="<%=ghemassagelist.ghemassages[i].imagedefault[0].originalname%>"/>
+          </div>
+          <div class="detail-product">
+              <div class="name-product">
+                  <a href="/ghe-massage/<%=ghemassagelist.ghemassages[i].nameseo %>"><%=ghemassagelist.ghemassages[i].name%></a>
+              </div>
+              <div class="sale-off">
+                <span><span class="commas"><%=ghemassagelist.ghemassages[i].price - ghemassagelist.ghemassages[i].pricesale %></span> ₫</span>
+              </div>
+              <div class="wrap-price-buy">
+                  <div class="wrap-price">
+                      <div class="price-sale"><span class="commas"><%=ghemassagelist.ghemassages[i].pricesale%></span> ₫</div>
+                      <div class="price"><span class="commas"><%=ghemassagelist.ghemassages[i].price%></span> ₫</div>
+                  </div>
+                  <div class="buy">
+                    <a href="/ghe-massage/<%=ghemassagelist.ghemassages[i].nameseo %>">
+                      <i class="fa fa-cart-plus"></i>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </li>
+    <%}%>
+  </ul>
+  <div class="btn-view-all border">
+      <a href=""><i class="fa fa-angle-double-down"></i>Xem thêm sản phẩm</a>
+  </div>
+</section>

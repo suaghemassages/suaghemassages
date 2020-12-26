@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thêm ghế massage</title>
+  </head>
+  <body>
+    <form method="post" action="ghemassage-create" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Tên ghế</label>
+        <input type="text" name="name" placeholder="Nhập tên ghế massage" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tên ghế seo</label>
+        <input type="text" name="nameseo" placeholder="Nhập tên seo" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tình trạng : mới/cũ</label>
+        <input type="checkbox" name="status" >
+      </div>
+      <div class="form-group">
+        <label>Chọn ngành hàng</label>
+        <select name="nganhhang">
+          <option value="" selected disabled hidden>Chọn ngành hàng</option>
+          <%for(var i=0; i<nganhhangs.count;i++){%>
+          <option value="<%=nganhhangs.nganhhang[i].name%>"><%=nganhhangs.nganhhang[i].name%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Chọn thương hiệu</label>
+        <select name="trademark">
+          <option value="" selected disabled hidden>Chọn thương hiệu</option>
+          <%for(var i=0; i<trademarks.count;i++){%>
+          <option value="<%=trademarks.trademark[i].name%>"><%=trademarks.trademark[i].name%></option>
+          <%}%>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nhập giá gốc</label>
+        <input type="text" name="price" placeholder="Nhập Giá Gốc" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Nhập giá flashsale</label>
+        <input type="text" name="pricesale" placeholder="Nhập Giá FlashSale" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>hình ảnh đại diện</label>
+        <input type="file" name="imagedefault" placeholder="Import Hình Ảnh" class="form-control"  multiple>
+      </div>
+      <div class="form-group">
+        <label>Bộ sưu tập hình ảnh</label>
+        <input type="file" name="image" placeholder="Import Hình Ảnh" class="form-control"  multiple>
+      </div>
+      <div class="form-group">
+        <label>Thời gian bảo hành</label>
+        <input type="text" name="baohanh" placeholder="Nhập thời gian bảo hành" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Tiêu đề</label>
+        <input type="text" name="title" placeholder="Nhập Tiêu đề" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Og Tiêu đề</label>
+        <input type="text" name="ogtitle" placeholder="Nhập og-title" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Og Mô tả</label>
+        <input type="text" name="ogdescription" placeholder="Nhập og-description" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Từ khóa</label>
+        <input type="text" name="keywords" placeholder="Nhập keywords" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Thứ tự sản phẩm</label>
+        <input type="text" name="index" placeholder="Nhập Thứ tự" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Mô tả dài</label>
+        <textarea id="shortdescription" name="description" placeholder="Nhập Mô tả" class="form-control">Biên soạn bài viết </textarea>
+      </div>
+      <div class="form-group">
+        <label>Là flashsale</label>
+        <input type="checkbox" name="flashsale" >
+      </div>
+      <div class="form-group">
+        <label>Là sản phẩm bán chạy</label>
+        <input type="checkbox" name="bestsell"  >
+      </div>
+      <input type="submit" value ="Thêm">
+    </form>
+  </body>
+</html>

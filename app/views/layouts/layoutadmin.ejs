@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="VtM6Uw9LnNnDf_HZarua14_LKNyOgSErbbpQZ4NyVEk" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link href="/assest/css/font.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="/assest/js/bundle.js"></script>
+    <script src="/javascripts/ckeditor/ckeditor.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116292249-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116292249-1');
+    </script>
+    <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"8DhJq1SZw320l9", domain:"ghemassageservice.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=8DhJq1SZw320l9" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+  </head>
+  <body>
+
+<%- include('../fontend/partials/header-admin') %>
+    <div class="container-fluid bg-backend">
+      <div class="row">
+          <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+            <%- include('../fontend/partials/sidebar-admin') %>
+          </div>
+          <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">
+              <%- body %>
+          </div>
+      </div>
+    </div>
+    <script src="https://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

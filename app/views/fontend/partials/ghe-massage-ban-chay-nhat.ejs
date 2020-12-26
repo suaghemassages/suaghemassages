@@ -1,0 +1,69 @@
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="navigat">
+                  <h2>Ghế massage bán chạy nhất</h2>
+                  <div class="viewallproduct">
+                    <%for(var i=0;i<trademarks.count;i++){%>
+                      <a href="ghe-massage-<%=trademarks.trademark[i].name%>" target="_blank"><%=trademarks.trademark[i].name%></a>
+                    <%}%>
+                      <a href="/ghe-massage-ban-chay-nhat" target="_blank">Xem tất cả <b><%=ghemassageall.count%> </b>ghế</a>
+                  </div>
+              </div>
+              <ul class="list-product">
+                  <li class="item-product feature">
+                      <div class="img-product">
+                          <img src="/<%=ghebestsell.ghemassages[0].imagedefault[0].originalname %>" alt="<%=ghebestsell.ghemassages[0].imagedefault[0].originalname %>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/ghe-massage/<%=ghebestsell.ghemassages[0].nameseo %> %>"><%=ghebestsell.ghemassages[0].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas"><%=ghebestsell.ghemassages[0].price - ghebestsell.ghemassages[0].pricesale%></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale"><span class="commas"><%=ghebestsell.ghemassages[0].pricesale %></span> ₫</div>
+                                  <div class="price"><span class="commas"><%=ghebestsell.ghemassages[0].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/ghe-massage/<%=ghebestsell.ghemassages[0].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <% for(var i=1;i<ghebestsell.count;i++){ %>
+                    <li class="item-product">
+                      <div class="img-product">
+                          <img src="/<%=ghebestsell.ghemassages[i].imagedefault[0].originalname %>" alt="<%=ghebestsell.ghemassages[i].imagedefault[0].originalname %>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/ghe-massage/<%=ghebestsell.ghemassages[i].nameseo%>"> <%=ghebestsell.ghemassages[i].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas"><%=ghebestsell.ghemassages[i].price - ghebestsell.ghemassages[i].pricesale%></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale"><span class="commas"><%=ghebestsell.ghemassages[i].pricesale %></span> ₫</div>
+                                  <div class="price"><span class="commas"><%=ghebestsell.ghemassages[i].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/ghe-massage/<%=ghebestsell.ghemassages[i].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                    </li>
+                  <%}%>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>

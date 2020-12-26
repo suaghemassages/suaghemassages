@@ -1,0 +1,72 @@
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="navigat">
+                  <h2>Máy chạy bộ nổi bật nhất</h2>
+                  <div class="viewallproduct">
+                    <%for(var i=0;i<trademarksmaychaybo.count;i++){%>
+                      <a href="/may-chay-bo-<%=trademarksmaychaybo.trademark[i].name%>" target="_blank"><%=trademarksmaychaybo.trademark[i].name%></a>
+                    <%}%>
+                      <a href="/may-chay-bo-ban-chay-nhat" target="_blank">Xem  <b><%=maychayboall.count%> </b>máy</a>
+
+                  </div>
+              </div>
+              <ul class="list-product">
+                  <li class="item-product feature">
+                      <div class="img-product">
+                          <img src="/<%=maychaybobestsell.ghemassages[0].imagedefault[0].originalname %>" alt="<%=maychaybobestsell.ghemassages[0].imagedefault[0].originalname%>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/may-chay-bo/<%=maychaybobestsell.ghemassages[0].nameseo %>"><%=maychaybobestsell.ghemassages[0].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas" ><%=maychaybobestsell.ghemassages[0].price - maychaybobestsell.ghemassages[0].pricesale  %></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale "><span class="commas"><%=maychaybobestsell.ghemassages[0].pricesale %></span> ₫</div>
+                                  <div class="price" commas><span class="commas"><%=maychaybobestsell.ghemassages[0].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/may-chay-bo/<%=maychaybobestsell.ghemassages[0].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <% for(var i=1;i<maychaybobestsell.count;i++){ %>
+                    <li class="item-product">
+                      <div class="img-product">
+                          <img src="/<%=maychaybobestsell.ghemassages[i].imagedefault[0].originalname %>" alt="<%=maychaybobestsell.ghemassages[i].imagedefault[0].originalname %>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/may-chay-bo/<%=maychaybobestsell.ghemassages[0].nameseo %>"><%=maychaybobestsell.ghemassages[i].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas" ><%=maychaybobestsell.ghemassages[i].price - maychaybobestsell.ghemassages[i].pricesale  %></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale"><span class="commas" ><%=maychaybobestsell.ghemassages[i].pricesale %></span> ₫</div>
+                                  <div class="price"><span class="commas" ><%=maychaybobestsell.ghemassages[i].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/may-chay-bo/<%=maychaybobestsell.ghemassages[0].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                    </li>
+                  <%}%>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+</section>

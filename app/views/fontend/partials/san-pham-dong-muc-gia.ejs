@@ -1,0 +1,30 @@
+<aside>
+  <div class="suggest">
+            <figure class="template">
+                <figcaption>Sản phẩm đồng mức giá</figcaption>
+                <b></b>
+            </figure>
+            <ul>
+              <%for(var i=0;i<dongmucgia.count;i++){%>
+                <li>
+                    <a class="img-link" href="/ghe-massage/<%=dongmucgia.ghemassages[i].nameseo%>">
+                      <img src="/<%=dongmucgia.ghemassages[i].imagedefault[0].originalname%>">
+                    </a>
+                    <dl>
+                        <dt>
+                            <a href="/ghe-massage/<%=dongmucgia.ghemassages[i].nameseo%>">
+                              <%=dongmucgia.ghemassages[i].name%>
+                            </a>
+                        </dt>
+                        <dd>
+                            <span class="price-old"><%=dongmucgia.ghemassages[i].price%> ₫</span>
+                        </dd>
+                        <dd>
+                          <span class="price-current"><%=dongmucgia.ghemassages[i].pricesale%> ₫</span>
+                        </dd>
+                    </dl>
+                </li>
+              <%}%>
+            </ul>
+          </div>
+</aside>

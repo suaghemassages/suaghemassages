@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/posts/edit/<%=post._id%>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>Title</label>
+          <input type="text" name="title" placeholder="Nhập title" autocomplete="off" class="form-control" value="<%=post.title%>">
+      </div>
+      <div class="form-group">
+        <label>Title seo</label>
+          <input type="text" name="titleseo" placeholder="Nhập titleseo" autocomplete="off" class="form-control" value="<%=post.titleseo%>">
+      </div>
+      <div class="form-group">
+        <label>Mô tả ngắn</label>
+            <textarea  name="shortdescription" placeholder="Nhập mô tả ngắn" autocomplete="off" class="form-control" ><%=post.shortdescription%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Mô tả dài</label>
+              <textarea  name="description" placeholder="Nhập mô tả " autocomplete="off" class="form-control"><%=post.description%></textarea>
+      </div>
+      <div class="form-group">
+        <label>Thời gian đăng bài</label>
+            <input type="datetime-local" name="day" placeholder="Nhập Ngày đăng bài" autocomplete="off" class="form-control" value="<%=post.day%>">
+      </div>
+      <div class="form-group">
+        <label>og-title</label>
+              <input type="text" name="ogtitle" placeholder="Nhập og-title" autocomplete="off" class="form-control" value="<%=post.ogtitle%>">
+      </div>
+      <div class="form-group">
+        <label>og-description</label>
+            <input type="text" name="ogdescription" placeholder="Nhập og-description" autocomplete="off" class="form-control" value="<%=post.ogdescription%>">
+      </div>
+      <div class="form-group">
+        <label>keywords</label>
+            <input type="text" name="keywords" placeholder="Nhập từ khóa" autocomplete="off" class="form-control" value="<%=post.keywords%>">
+      </div>
+
+
+
+
+
+      <%if(post.hotposts){%>
+        <div class="form-group">
+          <label>Post tiêu điểm</label>
+            <input type="checkbox" name="hotposts" checked>
+        </div>
+      <%} else{%>
+        <div class="form-group">
+          <label>Post tiêu điểm</label>
+            <input type="checkbox" name="hotposts">
+        </div>
+      <%}%>
+      <%if(post.lastposts){%>
+        <div class="form-group">
+          <label>Post mới nhất</label>
+          <input type="checkbox" name="lastposts" checked>
+        </div>
+      <%} else{%>
+        <div class="form-group">
+          <label>Post mới nhất</label>
+          <input type="checkbox" name="lastposts" >
+        </div>
+      <%}%>
+      <div class="form-group">
+        <label>Tên dịch vụ</label>
+          <input type="text" name="service" placeholder="Nhập dịch vụ" autocomplete="off" class="form-control" value="<%=post.service%>">
+      </div>
+      <div class="form-group">
+        <label>Hình ảnh</label>
+          <input type="file" name="image" placeholder="Import Hình Ảnh" autocomplete="off" class="form-control" value="<%=post.image%>">
+      </div>
+      <div class="form-group">
+        <label>Thứ tự index</label>
+          <input type="number" name="index" placeholder="Nhập thứ tự" autocomplete="off" class="form-control" value="<%=post.index%>">
+      </div>
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

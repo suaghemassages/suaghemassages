@@ -1,0 +1,39 @@
+
+
+  <h2>Danh sách Banner</h2>
+    <h2>Tổng số Banner <%=response.count%></h2>
+    <a href="/bannernews/bannernews-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Hình ảnh</th>
+        <th>Index</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+
+        <td class="image-response"><img src="/<%=response.ghemassages[i].image %>" >  </td>
+
+        <td><%-response.ghemassages[i].index %>  </td>
+        <td><a href="/bannernews/edit/<%=response.ghemassages[i].bannernewsId %>">Sửa</a></td>
+        <td><a class="delete-bannernews" data-id="<%=response.ghemassages[i].bannernewsId %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

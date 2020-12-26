@@ -1,0 +1,165 @@
+
+<section>
+  <div class="breadcrumb-mb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+              <li class="breadcrumb-item mb" active aria-current="page"> Tin tức tổng hợp</li>
+        </ol>
+    </nav>
+  </div>
+  <div class="flexslider">
+    <ul class="slides">
+      <%for(var i=0;i<slidenews.count;i++){%>
+      <li>
+        <img src="/<%=slidenews.slide[i].image%>" alt="<%=slidenews.slide[i].image%>"/>
+        <p class="flex-caption"><%=slidenews.slide[i].title%></p>
+      </li>
+      <%}%>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap-news-list mb">
+    <h2><%=categorys.category[0].name%></h2>
+    <ul class="news-list">
+      <%for(var k=0;k<tinkhuyenmai.count;k++){%>
+        <li>
+            <div class="pull-left img-wrapper">
+                <a href="/tin-tuc/<%=tinkhuyenmai.new[k].titleseo%>">
+                    <img  src="/<%=tinkhuyenmai.new[k].image%>" alt="<%=tinkhuyenmai.new[k].image%>">
+                </a>
+            </div>
+            <div class="overflow-hidden views-fieldset" >
+              <div class="title-news">
+                  <a href="/tin-tuc/<%-tinkhuyenmai.new[k].titleseo%>"><%-tinkhuyenmai.new[k].title%></a>
+              </div>
+              <div class="sub-head-mb"></div>
+            </div>
+            <p><%-tinkhuyenmai.new[k].shortdescription%></p>
+            <div class="btn-view-all">
+                <a href="/tin-tuc/<%-tinkhuyenmai.new[k].titleseo%>"><i class="fa fa-angle-double-down"></i>Xem chi tiết tại đây</a>
+            </div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="wrap-news-list mb">
+    <h2><%=categorys.category[1].name%></h2>
+    <ul class="news-list">
+      <%for(var k=0;k<tintieudung.count;k++){%>
+        <li>
+            <div class="pull-left img-wrapper">
+                <a href="/tin-tuc/<%-tintieudung.new[k].titleseo%>">
+                    <img  src="/<%=tintieudung.new[k].image%>" alt="<%=tintieudung.new[k].image%>">
+                </a>
+            </div>
+            <div class="overflow-hidden views-fieldset" >
+                <div class="title-news">
+                  <a href="/tin-tuc/<%-tintieudung.new[k].titleseo%>"><%-tintieudung.new[k].title%></a>
+                </div>
+                <div class="sub-head-mb"></div>
+            </div>
+            <p><%-tintieudung.new[k].shortdescription%></p>
+            <div class="btn-view-all">
+                <a href="/tin-tuc/<%-tintieudung.new[k].titleseo%>"><i class="fa fa-angle-double-down"></i>Xem chi tiết tại đây</a>
+            </div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="wrap-news-list mb">
+    <h2><%=categorys.category[2].name%></h2>
+    <ul class="news-list">
+      <%for(var k=0;k<tindichvu.count;k++){%>
+        <li>
+            <div class="pull-left img-wrapper">
+                <a href="/tin-tuc/<%-tindichvu.new[k].titleseo%>">
+                    <img  src="/<%=tindichvu.new[k].image%>" alt="<%-tindichvu.new[k].image%>">
+                </a>
+            </div>
+            <div class="overflow-hidden views-fieldset" >
+              <div class="title-news">
+                  <a href="/tin-tuc/<%-tindichvu.new[k].titleseo%>"><%-tindichvu.new[k].title%></a>
+              </div>
+              <div class="sub-head-mb"></div>
+            </div>
+            <p><%-tindichvu.new[k].shortdescription%></p>
+            <div class="btn-view-all">
+                <a href="/tin-tuc/<%-tindichvu.new[k].titleseo%>"><i class="fa fa-angle-double-down"></i>Xem chi tiết tại đây</a>
+            </div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="wrap-news-list mb">
+    <h2><%=categorys.category[3].name%></h2>
+    <ul class="news-list">
+      <%for(var k=0;k<tinsuckhoe.count;k++){%>
+        <li>
+            <div class="pull-left img-wrapper">
+                <a href="/tin-tuc/<%-tinsuckhoe.new[k].titleseo%>">
+                    <img  src="/<%=tinsuckhoe.new[k].image%>" alt="<%=tinsuckhoe.new[k].image%>">
+                </a>
+            </div>
+            <div class="overflow-hidden views-fieldset" >
+                <div class="title-news">
+                  <a href="/tin-tuc/<%-tinsuckhoe.new[k].titleseo%>"><%-tinsuckhoe.new[k].title%></a>
+                </div>
+                <div class="sub-head-mb"></div>
+            </div>
+            <p><%-tinsuckhoe.new[k].shortdescription%></p>
+            <div class="btn-view-all">
+                <a href="/tin-tuc/<%-tinsuckhoe.new[k].titleseo%>"><i class="fa fa-angle-double-down"></i>Xem chi tiết tại đây</a>
+            </div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+  <div class="wrap-news-list mb">
+    <h2><%=categorys.category[4].name%></h2>
+    <ul class="news-list">
+      <%for(var k=0;k<tinmeovat.count;k++){%>
+        <li>
+            <div class="img-wrapper">
+                <a href="/tin-tuc/<%-tinmeovat.new[k].titleseo%>">
+                    <img  src="/<%=tinmeovat.new[k].image%>" alt="<%=tinmeovat.new[k].image%>">
+                </a>
+            </div>
+            <div class="overflow-hidden views-fieldset" >
+                <div class="title-news">
+                  <a href="/tin-tuc/<%-tinmeovat.new[k].titleseo%>"><%-tinmeovat.new[k].title%></a>
+                </div>
+                <div class="sub-head-mb"></div>
+            </div>
+            <p><%-tinmeovat.new[k].shortdescription%></p>
+            <div class="btn-view-all">
+                <a href="/tin-tuc/<%-tinmeovat.new[k].titleseo%>"><i class="fa fa-angle-double-down"></i>Xem chi tiết tại đây</a>
+            </div>
+        </li>
+      <%}%>
+    </ul>
+  </div>
+</section>
+
+
+<div class="aside-right-newsdetail-mb">
+  <div class="suggest  marTop10">
+      <figure class="template news letter">
+                <figcaption>Nhận bản tin</figcaption>
+                <b></b>
+      </figure>
+  </div>
+  <div class="form-news-letter">
+    <form action='/nhanbantin/ban-tin-news' method="post">
+      <div class="mc-field-group">
+        <input type="text" value="" name="email" placeholder="nhận bản tin qua email" >
+      </div>
+      <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" class="btn-news-letter" >
+      </div>
+    </form>
+  </div>
+
+</div>

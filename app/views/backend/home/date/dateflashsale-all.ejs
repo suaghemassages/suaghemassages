@@ -1,0 +1,35 @@
+
+
+  <h2>Danh sách sản phẩm</h2>
+    <h2>Tổng số sản phẩm <%=response.count%></h2>
+    <a href="/date/dateflashsale-create">Thêm</a>
+  <table class="table table-bordered table-admin">
+    <thead>
+      <tr>
+        <th>Thời gian chạy Flash Sale</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for(var i=0;i<response.count;i++){ %>
+        <tr>
+        <td> <%=response.ghemassages[i].date %> </td>
+
+        <td><a href="/date/edit/<%=response.ghemassages[i]._id %>">Sửa</a></td>
+        <td><a class="delete-date" data-id="<%=response.ghemassages[i]._id %>">Xóa</a></td>
+
+        </tr>
+      <% } %>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+<ul>
+
+</ul>

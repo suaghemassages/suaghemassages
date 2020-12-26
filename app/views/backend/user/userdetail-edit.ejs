@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form method="post" action="/user/edit/<%=user._id%>" >
+      <input type="text" name="username" placeholder="Nhập username" value="<%=user.username%>">
+      <input type="text" name="password" placeholder="Nhập password" value="<%=user.password%>">
+
+      <input type="submit" value ="Update">
+    </form>
+  </body>
+</html>

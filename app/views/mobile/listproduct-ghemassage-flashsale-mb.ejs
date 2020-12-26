@@ -1,0 +1,68 @@
+
+<section class="mb">
+  <div class="breadcrumb-mb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="mb"><i class="fa fa-home"></i> Trang chủ</a></li>
+              <li class="breadcrumb-item mb" active aria-current="page">  <%=flashsale.count%> sản phẩm flash sale</li>
+        </ol>
+    </nav>
+  </div>
+
+  <div class="header-main">
+    <h1> Flash Sale
+    </h1>
+    <div class="cutdown-mb" id="count-down-1" data-count-down="<%=dateflashsale%>" data-current-time="2018/02/02 12:00">
+        <div class="time-cutdown">
+              <div class="table-cell">
+                  <div class="tab-val days" style="opacity: 1;">02</div>
+              </div>
+              <div class="space">D</div>
+              <div class="table-cell">
+                  <div class="tab-val hours">00</div>
+              </div>
+              <div class="space">H</div>
+              <div class="table-cell">
+                  <div class="tab-val minutes">34</div>
+              </div>
+              <div class="space">M</div>
+              <div class="table-cell">
+                  <div class="tab-val seconds">57</div>
+              </div>
+              <div class="space">S</div>
+        </div>
+    </div>
+  </div>
+  </div>
+  <ul class="list-product">
+    <%for(var i=0;i<flashsale.count;i++){%>
+      <li class="item-product mb">
+          <div class="img-product">
+              <img src="/<%=flashsale.ghemassages[i].imagedefault[0].originalname%>" alt="<%=flashsale.ghemassages[i].imagedefault[0].originalname%>"/>
+          </div>
+          <div class="detail-product">
+              <div class="name-product">
+                  <a href="/san-pham-giam-gia-flash-sale/<%=flashsale.ghemassages[i].nameseo %>"><%=flashsale.ghemassages[i].name%></a>
+              </div>
+              <div class="sale-off">
+                <span><span class="commas"><%=flashsale.ghemassages[i].price - flashsale.ghemassages[i].pricesale %></span> ₫</span>
+              </div>
+              <div class="wrap-price-buy">
+                  <div class="wrap-price">
+                      <div class="price-sale"><span class="commas"><%=flashsale.ghemassages[i].pricesale%></span> ₫</div>
+                      <div class="price"><span class="commas"><%=flashsale.ghemassages[i].price%></span> ₫</div>
+                  </div>
+                  <div class="buy">
+                    <a href="/san-pham-giam-gia-flash-sale/<%=flashsale.ghemassages[i].nameseo %>">
+                      <i class="fa fa-cart-plus"></i>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </li>
+    <%}%>
+  </ul>
+  <div class="btn-view-all border">
+      <a href=""><i class="fa fa-angle-double-down"></i>Xem thêm sản phẩm</a>
+  </div>
+</section>

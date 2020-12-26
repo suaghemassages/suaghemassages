@@ -1,0 +1,128 @@
+<nav class="menu-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-menu-item">
+            <li class="item">
+              <a href="/" class="active" ><i class="fa fa-home"></i> Trang chủ</a>
+            </li>
+            <li class="item">
+              <a href="/ghe-massage-ban-chay-nhat" class="active" ><img src="/massage-chair-icon-desk.png" alt="ghế massage bán chạy nhất" />Ghế massage</a>
+              <div class="item-detail">
+                  <div class="item-detail-wrap">
+
+                      <div class="item-sec sec-1">
+                        <ul>
+                            <%for(var l=0;l<trademarks.count;l++){%>
+                              <li><a href="/ghe-massage-<%=trademarks.trademark[l].name%>" target="_blank">Ghế massage <%=trademarks.trademark[l].name%></a></li>
+                            <%}%>
+                        </ul>
+                      </div>
+                      <div class="item-sec sec-2">
+                        <ul>
+                              <li><a href="" title="Ghế Massage Tokuyo">Ghế Massage phổ thông</a></li>
+                              <li><a href="" title="Ghế Massage Okia">Ghế Massage hạng trung</a></li>
+                              <li><a href="" title="Ghế Massage Ogawa">Ghế Massage hạng sang</a></li>
+                        </ul>
+                      </div>
+                      <div class="item-sec sec-3">
+                        <ul><p>Ghế massage bán chạy nhất<p>
+                          <%for(var k=0;k<ghebestsellmenuhome.count;k++){ %>
+                              <li class="item-sell-best">
+                                <div class="product-sell-best">
+                                    <div class="img-product-sell-best">
+                                      <a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>">
+                                        <img src="/<%=ghebestsellmenuhome.ghemassages[k].imagedefault[0].originalname%>" alt="<%=ghebestsellmenuhome.ghemassages[k].name%> bán chạy nhất">
+                                      </a>
+                                    </div>
+                                    <div class="detail-product-sell-best">
+                                        <div class="name-product-sell-best"><a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>"><%=ghebestsellmenuhome.ghemassages[k].name%></a></div>
+                                        <div class="price-product-sell-best commas"><%=ghebestsellmenuhome.ghemassages[k].pricesale %> ₫ </div>
+                                        <div class="buy-now">
+                                          <a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>">
+                                            <i class="fa fa-cart-plus"></i>
+                                            <span>Mua ngay</span>
+                                          </a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </li>
+                          <%}%>
+                      </div>
+                  </div>
+              </div>
+            </li>
+            <li class="item">
+              <a href="/thanh-ly-ghe-massage-cu" class="active" >Thanh lý ghế massage cũ</a>
+
+            </li>
+
+            <li class="item relative">
+              <a href="/dich-vu-sua-chua" class="active" ><i class="fa fa-cog"></i> Dịch vụ sửa chữa</a>
+              <div class="item-detail service">
+                  <div class="item-detail-wrap">
+
+                      <div class="item-sec sec-right">
+                        <ul>
+                          <%for(var i=0;i<lastpostshome.count;i++){%>
+                            <li>
+                              <a href="/<%=lastpostshome.posts[i].titleseo%>" title=""><i class="fa fa-angle-right"></i> <%=lastpostshome.posts[i].title%></a>
+                            </li>
+                          <%}%>
+                       </ul>
+                      </div>
+
+                  </div>
+              </div>
+            </li>
+            <li class="item">
+              <a href="/tin-tuc" class="active" ><i class="fa fa-newspaper-o"></i> Tin tức</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<%if(products){%>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+          <div class="bar-top">
+            <a href="/" class="buymore">Mua thêm sản phẩm khác</a>
+            <div class="yourcart">Giỏ hàng của bạn</div>
+          </div>
+          <div class="detail-cart">
+            <ul class="list-group">
+                <% for(var i=0; i<products.length ;i++){ %>
+                    <li class="list-group-item">
+                        <span class="badge"><%=products[i].qty%></span>
+                      <span class="name-order">  <strong><%=products[i].item.name   %></strong></span>
+                        <span class="label label-success label-normal commas"><%=products[i].price%> ₫</span>
+                        <a href="/cart/add/<%=products[i].item._id%>" class="label label-primary label-normal">+</a>
+                        <a href="/cart/reduce/<%=products[i].item._id%>" class="label label-primary label-normal">-</a>
+                        <a href="/cart/remove/<%=products[i].item._id%>" class="label label-danger label-normal">Xóa</a>
+                    </li>
+                <%}%>
+            </ul>
+
+            <div >
+                <strong>Tổng đơn hàng: <span class="commas total-order"><%=totalPrice%> ₫</span></strong>
+            </div>
+          </div>
+
+        </div>
+    </div>
+<hr>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <a href="/cart/checkout" type="button" class="btn btn-success">Thanh toán</a>
+            <a href="/cart/checkoutOnline" type="button" class="btn btn-success">Thanh toán qua thẻ Visa</a>
+        </div>
+    </div>
+    <% } else {%>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+    <% } %>

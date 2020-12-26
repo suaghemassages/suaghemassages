@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thêm Dịch Vụ</title>
+  </head>
+  <body>
+    <form method="post" action="trademark-create" >
+
+      <input type="text" name="name" placeholder="Tên thương hiệu"/>
+      <select name="nganhhang">
+        <option value="" selected disabled hidden>Chọn ngành hàng</option>
+        <%for(var i=0; i<nganhhangs.count;i++){%>
+        <option value="<%=nganhhangs.nganhhang[i].name%>"><%=nganhhangs.nganhhang[i].name%></option>
+        <%}%>
+      </select>
+      <input type="text" name="index" placeholder="Thứ tự thương hiệu" autocomplete="off">
+      <input type="submit" value ="Thêm">
+    </form>
+  </body>
+</html>

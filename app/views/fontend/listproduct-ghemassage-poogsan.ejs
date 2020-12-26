@@ -1,0 +1,172 @@
+<nav class="menu-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-menu-item">
+            <li class="item">
+              <a href="/" class="active" ><i class="fa fa-home"></i> Trang chủ</a>
+            </li>
+            <li class="item">
+              <a href="/ghe-massage-ban-chay-nhat" class="active" ><img src="/massage-chair-icon-desk.png" alt="ghế massage bán chạy nhất" />Ghế massage</a>
+              <div class="item-detail">
+                  <div class="item-detail-wrap">
+
+                      <div class="item-sec sec-1">
+                        <ul>
+                            <%for(var l=0;l<trademarks.count;l++){%>
+                              <li><a href="/ghe-massage-<%=trademarks.trademark[l].name%>" target="_blank">Ghế massage <%=trademarks.trademark[l].name%></a></li>
+                            <%}%>
+                        </ul>
+                      </div>
+                      <div class="item-sec sec-2">
+                        <ul>
+                              <li><a href="" title="Ghế Massage Tokuyo">Ghế Massage phổ thông</a></li>
+                              <li><a href="" title="Ghế Massage Okia">Ghế Massage hạng trung</a></li>
+                              <li><a href="" title="Ghế Massage Ogawa">Ghế Massage hạng sang</a></li>
+                        </ul>
+                      </div>
+                      <div class="item-sec sec-3">
+                        <ul><p>Ghế massage bán chạy nhất<p>
+                          <%for(var k=0;k<ghebestsellmenuhome.count;k++){ %>
+                              <li class="item-sell-best">
+                                <div class="product-sell-best">
+                                    <div class="img-product-sell-best">
+                                      <a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>">
+                                        <img src="/<%=ghebestsellmenuhome.ghemassages[k].imagedefault[0].originalname%>" alt="<%=ghebestsellmenuhome.ghemassages[k].name%> bán chạy nhất">
+                                      </a>
+                                    </div>
+                                    <div class="detail-product-sell-best">
+                                        <div class="name-product-sell-best"><a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>"><%=ghebestsellmenuhome.ghemassages[k].name%></a></div>
+                                        <div class="price-product-sell-best commas"><%=ghebestsellmenuhome.ghemassages[k].pricesale %> ₫ </div>
+                                        <div class="buy-now">
+                                          <a href="/ghe-massage/<%=ghebestsellmenuhome.ghemassages[k].nameseo%>">
+                                            <i class="fa fa-cart-plus"></i>
+                                            <span>Mua ngay</span>
+                                          </a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </li>
+                          <%}%>
+                      </div>
+                  </div>
+              </div>
+            </li>
+            <li class="item">
+              <a href="/thanh-ly-ghe-massage-cu" class="active" >Thanh lý ghế massage cũ</a>
+
+            </li>
+
+            <li class="item relative">
+              <a href="/dich-vu-sua-chua" class="active" ><i class="fa fa-cog"></i> Dịch vụ sửa chữa</a>
+              <div class="item-detail service">
+                  <div class="item-detail-wrap">
+
+                      <div class="item-sec sec-right">
+                        <ul>
+                          <%for(var i=0;i<lastpostshome.count;i++){%>
+                            <li>
+                              <a href="/<%=lastpostshome.posts[i].titleseo%>" title=""><i class="fa fa-angle-right"></i> <%=lastpostshome.posts[i].title%></a>
+                            </li>
+                          <%}%>
+                       </ul>
+                      </div>
+
+                  </div>
+              </div>
+            </li>
+            <li class="item">
+              <a href="/tin-tuc" class="active" ><i class="fa fa-newspaper-o"></i> Tin tức</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="/ghe-massage"><i class="fa fa-home"></i> Ghế massage</a></li>
+                          <li class="breadcrumb-item" active aria-current="page"> Ghế massage Poogsan</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col-xs-12">
+                <%- include('../fontend/partials/slideshow-nganh-hang') %>
+            </div>
+            <div class="col-xs-12">
+                <div class="header-main">
+                  <h1>ghế massage
+                    <span> (<%=ghemassagelist.count%> sản phẩm)</span>
+                  </h1>
+                  <div class="sort">
+                      <i class="fa fa-sort"></i>
+                      <select id="sort">
+                          <option value="" selected disabled hidden>Sắp xếp theo</option>
+                          <option value="asc" >
+                            Giá tăng dần
+                          </option>
+                          <option value="desc">
+                            Giá giảm dần
+                          </option>
+                          <option value="sale">
+                            Bán chạy nhất
+                          </option>
+                      </select>
+                  </div>
+                  <div class="sort">
+                      <i class="fa fa-usd"></i>
+                      <select id="ghesortprice">
+                          <option value="" selected disabled hidden>Chọn khoảng giá</option>
+                          <option value="duoi5tr" >
+                            0 - 5 triệu
+                          </option>
+                          <option value="duoi10tr">
+                            5 - 10 triệu
+                          </option>
+                          <option value="tren10tr">
+                            trên 10 triệu
+                          </option>
+                      </select>
+                  </div>
+                </div>
+                <ul class="list-product">
+                  <%for(var i=0;i<ghemassagelist.count;i++){%>
+                    <li class="item-product">
+                        <div class="img-product">
+                            <img src="/<%=ghemassagelist.ghemassages[i].imagedefault[0].originalname%>" alt="<%=ghemassagelist.ghemassages[i].imagedefault[0].originalname%>"/>
+                        </div>
+                        <div class="detail-product">
+                            <div class="name-product">
+                                <a href="/ghe-massage/<%=ghemassagelist.ghemassages[i].nameseo %>"><%=ghemassagelist.ghemassages[i].name%></a>
+                            </div>
+                            <div class="sale-off">
+                              <span><span class="commas"><%=ghemassagelist.ghemassages[i].price - ghemassagelist.ghemassages[i].pricesale %></span> ₫</span>
+                            </div>
+                            <div class="wrap-price-buy">
+                                <div class="wrap-price">
+                                    <div class="price-sale"><span class="commas"><%=ghemassagelist.ghemassages[i].pricesale%> ₫</span></div>
+                                    <div class="price"><span class="commas"><%=ghemassagelist.ghemassages[i].price%> ₫</span></div>
+                                </div>
+                                <div class="buy">
+                                  <a href="/ghe-massage/<%=ghemassagelist.ghemassages[i].nameseo %>">
+                                    <i class="fa fa-cart-plus"></i>
+
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                  <%}%>
+                </ul>
+                <div class="btn-view-all border">
+                    <a href=""><i class="fa fa-angle-double-down"></i>Xem thêm sản phẩm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+
+<section>
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="navigat">
+                  <h2>Bếp hồng ngoại - bếp từ nổi bật nhất</h2>
+                  <div class="viewallproduct">
+                    <%for(var i=0;i<trademarksbep.count;i++){%>
+                      <a href="bep-tu-bep-hong-ngoai-<%=trademarksbep.trademark[i].name%>" target="_blank"><%=trademarksbep.trademark[i].name%></a>
+                    <%}%>
+                      <a href="bep-tu-bep-hong-ngoai-ban-chay-nhat" target="_blank">Xem  <b><%=bepall.count%> </b>bếp</a>
+
+                  </div>
+              </div>
+              <ul class="list-product">
+                  <li class="item-product feature">
+                      <div class="img-product">
+                          <img src="/<%=bepbestsell.ghemassages[0].imagedefault[0].originalname %>" alt="<%=bepbestsell.ghemassages[0].imagedefault[0].originalname %>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/bep-tu-bep-hong-ngoai/<%=bepbestsell.ghemassages[0].nameseo %>"><%=bepbestsell.ghemassages[0].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas"><%=bepbestsell.ghemassages[0].price - bepbestsell.ghemassages[0].pricesale%></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale"><span class="commas"><%=bepbestsell.ghemassages[0].pricesale %></span> ₫</div>
+                                  <div class="price"><span class="commas"><%=bepbestsell.ghemassages[0].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/bep-tu-bep-hong-ngoai/<%=bepbestsell.ghemassages[0].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <% for(var i=1;i<bepbestsell.count;i++){ %>
+                    <li class="item-product">
+                      <div class="img-product">
+                          <img src="/<%=bepbestsell.ghemassages[i].imagedefault[0].originalname %>" alt="<%=bepbestsell.ghemassages[i].imagedefault[0].originalname %>"/>
+                      </div>
+                      <div class="detail-product">
+                          <div class="name-product">
+                              <a href="/bep-tu-bep-hong-ngoai/<%=bepbestsell.ghemassages[i].nameseo %>"><%=bepbestsell.ghemassages[i].name %></a>
+                          </div>
+                          <div class="sale-off">
+                            <span>Sale <span class="commas"><%=bepbestsell.ghemassages[i].price - bepbestsell.ghemassages[i].pricesale%></span> ₫</span>
+                          </div>
+                          <div class="wrap-price-buy">
+                              <div class="wrap-price">
+                                  <div class="price-sale"><span class="commas"><%=bepbestsell.ghemassages[i].pricesale %></span> ₫</div>
+                                  <div class="price"><span class="commas"><%=bepbestsell.ghemassages[i].price %></span> ₫</div>
+                              </div>
+                              <div class="buy">
+                                <a href="/bep-tu-bep-hong-ngoai/<%=bepbestsell.ghemassages[i].nameseo %>">
+                                  <i class="fa fa-cart-plus"></i>
+                                </a>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <%}%>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+</section>
